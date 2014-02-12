@@ -91,9 +91,6 @@ class GlobalController:
         current_selection.display_neighbours()
         return current_selection
 
-    def initialize_ant_controller(self):
-        self.ant_controller.nest = self.graph.nest_node
-
     def input_listen(self, run_ant, running):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -136,6 +133,9 @@ class GlobalController:
             self.graph.nest_node = self.drag(self.graph.nest_node, self.graph.grid, (59, 255, 50), x, y)
         elif self.active_mode == "dragGoal":
             self.graph.food_node = self.drag(self.graph.food_node, self.graph.grid, (255, 50, 50), x, y)
+
+    def initialize_ant_controller(self):
+        self.ant_controller.nest = self.graph.nest_node
 
     def main(self):
         run_ant = False
