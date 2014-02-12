@@ -51,7 +51,7 @@ class GenericCell:
 class GenericGraph:
     def __init__(self, tile_amount):
         self.tile_amount = tile_amount
-        self.create_grid()
+        #self.create_grid()
 
     def create_grid(self):
         self.grid = [[0 for x in range(self.tile_amount)] for y in range(self.tile_amount)]

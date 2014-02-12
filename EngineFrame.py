@@ -1,5 +1,6 @@
 import pygame
 import Ant
+import time
 
 
 class GraphEngine:
@@ -16,15 +17,26 @@ class GraphEngine:
         self.border = max(1, int(self.tile_size/15))
         self.screen = pygame.display.set_mode((width, height))
 
-    def display_cell(self, node, tile_size, border):
-        pygame.draw.rect(self.screen, node.color, (node.x*tile_size, node.y*tile_size, tile_size-border, tile_size-border))
-
-    def update(self):
-        self.screen.fill(self.background_color)
-
+    def display_all_cells(self):
         for x in range(0, self.graph.tile_amount):
             for y in range(0, self.graph.tile_amount):
                 self.display_cell(self.graph.grid[x][y], self.tile_size, self.border)
+
+    def display_cell(self, node, tile_size, border):
+        color = node.color
+        if node.contains_ant:
+            border *=5
+            color = (20, 20, 20, 155)
+        pygame.draw.rect(self.screen, color, [node.x*tile_size, node.y*tile_size, tile_size-border, tile_size-border])
+
+    #def display_all_ants(self, ant_list):
+        #for ant in ant_list:
+            #display_cell(ant.current_node, self.tile_size)
+
+
+    def update(self):
+        self.screen.fill(self.background_color)
+        self.display_all_cells()
         pygame.display.flip()
 
 
@@ -48,6 +60,7 @@ class GlobalController:
         return node
 
     def left_click(self, grid, x, y):
+        #Determins what your click will do
         active_mode = None
         if self.graph.nest_node is None:
             self.graph.nest_node = grid[x][y]
@@ -68,6 +81,7 @@ class GlobalController:
         return active_mode
 
     def right_click(self, current_selection, grid, x, y):
+        #Displays the neighbours of right clicked squares
         if current_selection is not None:
             current_selection.hide_neighbours()
         current_selection = grid[x][y]
@@ -80,7 +94,7 @@ class GlobalController:
     def main(self):
         run_ant = False
         running = True
-        while(running):
+        while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
@@ -104,7 +118,7 @@ class GlobalController:
 
                 if event.type == pygame.MOUSEBUTTONUP:
                     (b1, b2, b3) = pygame.mouse.get_pressed()
-                    #This makes it stop painting and dragging when you release mb1
+                    #This makes it stop painting/dragging and dragging when you release mb1
                     if not b1:
                         self.active_mode = None
 
@@ -122,8 +136,11 @@ class GlobalController:
                     self.graph.food_node = self.drag(self.graph.food_node, self.graph.grid, (255, 50, 50), x, y)
 
             self.engine.update()
+
             if run_ant:
-                    self.ant_controller.update()
+                self.ant_controller.update()
+                #time.sleep(1)
+
 
 gc = GlobalController()
 gc.main()

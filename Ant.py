@@ -1,11 +1,33 @@
 import GenericGridTools
 import time
+import operator
+import random
+
 
 
 class Cell(GenericGridTools.GenericCell):
+    pheromone_decay_rate = 0.1
+
     def __init__(self, x, y):
-        GenericGridTools.Cell.__init__(self, x, y)
-        self.pheromone = 0.0
+        GenericGridTools.GenericCell.__init__(self, x, y)
+        self.pheromone = float(0.0)
+        self.contains_ant = False
+
+    def ant_enter(self, pheromone_increase):
+        self.change_pheromone(pheromone_increase)
+        if not self.contains_ant:
+            self.contains_ant = True
+
+    def ant_exit(self):
+        if self.contains_ant:
+            self.contains_ant = False
+
+    def pheromone_decay(self):
+        self.change_pheromone(self, self.pheromone_decay_rate)
+
+    def change_pheromone(self, increment):
+        self.pheromone += increment
+        #Do something about color
 
 
 class Graph(GenericGridTools.GenericGraph):
@@ -13,11 +35,24 @@ class Graph(GenericGridTools.GenericGraph):
         GenericGridTools.GenericGraph.__init__(self, tile_amount)
         self.nest_node = None
         self.food_node = None
+        self.create_grid()
+
+    def create_grid(self):
+        self.grid = [[0 for x in range(self.tile_amount)] for y in range(self.tile_amount)]
+        for x in range (0, self.tile_amount):
+            for y in range (0, self.tile_amount):
+                new_cell = Cell(x, y)
+                self.check_neighbours(new_cell, x, y)
+                self.grid[x][y] = new_cell
 
 
 class Ant:
+    pheromone_increase = 1
+
     def __init__(self, start_node):
         self.current_node = start_node
+        self.current_node.ant_enter(0)
+        self.prev_node = None
 
     def __repr__(self):
         if self.current_node is not None:
@@ -27,8 +62,14 @@ class Ant:
         self.determine_move()
 
     def determine_move(self):
-        pass
-
+        possible_moves = []
+        for n in self.current_node.neighbours.values():
+            if not n.closed and n is not self.prev_node:
+                possible_moves.append(n)
+        self.prev_node = self.current_node
+        self.current_node = random.choice(possible_moves)
+        self.prev_node.ant_exit()
+        self.current_node.ant_enter(self.pheromone_increase)
 
 
 class AntController:
@@ -71,4 +112,3 @@ class AntController:
         self.update_ants()
 
 #ac = AntController(100, 10, GridTools.Cell(5, 6))
-
