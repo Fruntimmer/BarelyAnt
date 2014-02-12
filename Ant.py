@@ -12,6 +12,7 @@ class Cell(GenericGridTools.GenericCell):
         GenericGridTools.GenericCell.__init__(self, x, y)
         self.pheromone = float(0.0)
         self.contains_ant = False
+        self.contains_food = False
 
     def ant_enter(self, pheromone_increase):
         self.change_pheromone(pheromone_increase)
@@ -28,6 +29,9 @@ class Cell(GenericGridTools.GenericCell):
     def change_pheromone(self, increment):
         self.pheromone += increment
         #Do something about color
+
+    def add_food(self):
+        self.contains_food = True
 
 
 class Graph(GenericGridTools.GenericGraph):
@@ -47,12 +51,15 @@ class Graph(GenericGridTools.GenericGraph):
 
 
 class Ant:
-    pheromone_increase = 1
 
     def __init__(self, start_node):
         self.current_node = start_node
         self.current_node.ant_enter(0)
         self.prev_node = None
+        self.path = []
+        self.pheromone_increment = 0
+        self.found_food = False
+        self.is_done = False
 
     def __repr__(self):
         if self.current_node is not None:
@@ -63,14 +70,29 @@ class Ant:
 
     def determine_move(self):
         possible_moves = []
-        for n in self.current_node.neighbours.values():
-            if not n.closed and n is not self.prev_node:
-                possible_moves.append(n)
-        self.prev_node = self.current_node
-        self.current_node = random.choice(possible_moves)
-        self.prev_node.ant_exit()
-        self.current_node.ant_enter(self.pheromone_increase)
+        if not self.found_food:
+            for n in self.current_node.neighbours.values():
+                if not n.closed and n is not self.prev_node:
+                    possible_moves.append(n)
+            self.prev_node = self.current_node
+            self.current_node = random.choice(possible_moves)
+            self.path.append(self.prev_node)
 
+            #Check if new cell has food
+            if self.current_node.contains_food:
+                self.found_food = True
+                self.pheromone_increment = 1
+        else:
+            if len(self.path) > 0:
+                self.prev_node = self.current_node
+                self.current_node = self.path[len(self.path)-1]
+                self.path.pop()
+                print("Dude I found food!")
+            else:
+                self.is_done = True
+
+        self.prev_node.ant_exit()
+        self.current_node.ant_enter(self.pheromone_increment)
 
 class AntController:
     def __init__(self, ants_amount, ants_per_tick):
@@ -103,6 +125,13 @@ class AntController:
         for a in self.ant_list:
             a.update()
 
+    def remove_dead_ants(self):
+        ants_to_remove = []
+        for ant in self.ant_list:
+            if ant.is_done:
+                ants_to_remove.append(ant)
+        if len(ants_to_remove) > 0:
+            [self.ant_list.remove(ant) for ant in ants_to_remove]
 
     def update(self):
         self.update_timer()
@@ -110,5 +139,7 @@ class AntController:
             self.create_ants()
             self.reset_timer()
         self.update_ants()
+        self.remove_dead_ants()
+
 
 #ac = AntController(100, 10, GridTools.Cell(5, 6))
