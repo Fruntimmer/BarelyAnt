@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="" />
+    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ant.py" afterPath="$PROJECT_DIR$/Ant.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EngineFrame.py" afterPath="$PROJECT_DIR$/EngineFrame.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Ant.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,10 +31,9 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="29" selection-start="6051" selection-end="6051" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2312">
+            <state line="161" column="14" selection-start="6209" selection-end="6209" vertical-scroll-proportion="0.0" vertical-offset="2331" max-vertical-offset="2941">
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#62#1266#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -38,7 +42,7 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="34" selection-start="418" selection-end="418" vertical-scroll-proportion="0.44590163" vertical-offset="0" max-vertical-offset="3434">
+            <state line="10" column="23" selection-start="224" selection-end="224" vertical-scroll-proportion="0.25081968" vertical-offset="17" max-vertical-offset="3451">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -58,7 +62,7 @@
       <file leaf-file-name="GenericGridTools.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="8" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1870">
+            <state line="24" column="42" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1870">
               <folding />
             </state>
           </provider>
@@ -89,12 +93,11 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-6" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -441,7 +444,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="0" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -487,7 +490,6 @@
         <state line="15" column="18" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="2312">
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#62#1266#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -537,13 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="8" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="1870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
@@ -551,19 +546,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="42" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="29" selection-start="6051" selection-end="6051" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="2312">
+        <state line="161" column="14" selection-start="6209" selection-end="6209" vertical-scroll-proportion="0.0" vertical-offset="2331" max-vertical-offset="2941">
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#62#1266#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="34" selection-start="418" selection-end="418" vertical-scroll-proportion="0.44590163" vertical-offset="0" max-vertical-offset="3434">
+        <state line="10" column="23" selection-start="224" selection-end="224" vertical-scroll-proportion="0.25081968" vertical-offset="17" max-vertical-offset="3451">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

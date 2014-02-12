@@ -7,8 +7,9 @@ import random
 
 class Cell(GenericGridTools.GenericCell):
     #This needs heavy tweaking. Is measured in decay/second
-    pheromone_decay_rate = -0.2
-    pheromone_cap = 6
+    pheromone_decay_rate = -2
+    pheromone_cap = 100
+    base_chance = 30
 
     def __init__(self, x, y):
         GenericGridTools.GenericCell.__init__(self, x, y)
@@ -27,9 +28,8 @@ class Cell(GenericGridTools.GenericCell):
             self.contains_ant = False
 
     def pheromone_decay(self):
-        time_current = time.clock()
         delta_time = time.clock() - self.time_prev
-        self.change_pheromone(self.pheromone_decay_rate *delta_time)
+        self.change_pheromone(self.pheromone_decay_rate * delta_time)
         self.time_prev = time.clock()
 
     def change_pheromone(self, increment):
@@ -40,10 +40,10 @@ class Cell(GenericGridTools.GenericCell):
             self.change_color(increment)
 
     def change_color(self, increment):
-        increment *= -1
-        col_multiplier = 20
-        self.color = (self.color[0], self.color[1]+(increment*col_multiplier), self.color[2]+(increment*col_multiplier))
-        self.color = (self.color[0], min(255, max(0, self.color[1])), min(255, max(0, self.color[2])))
+        #increment *= -1
+        #col_multiplier = 20
+        self.color = (self.color[0], 255-(self.pheromone/self.pheromone_cap)*255, 255-(self.pheromone/self.pheromone_cap)*255)
+        #self.color = (self.color[0], min(255, max(0, self.color[1])), min(255, max(0, self.color[2])))
 
     def add_food(self):
         self.contains_food = True
@@ -75,7 +75,6 @@ class Graph(GenericGridTools.GenericGraph):
 
 class Ant:
 
-    base_chance = 2.5
     def __init__(self, start_node):
         self.current_node = start_node
         self.current_node.ant_enter(0)
@@ -102,11 +101,11 @@ class Ant:
         for n in neighbours:
             if not n.closed and n is not self.prev_node:
                 possible_moves.append(n)
-                p_sum += n.pheromone+self.base_chance
+                p_sum += n.pheromone+n.base_chance
         if p_sum > 0:
             possible_moves.sort(key=lambda x: x.pheromone, reverse=True)
             for n in possible_moves:
-                cumsum += n.pheromone+self.base_chance
+                cumsum += n.pheromone+n.base_chance
                 choices.append((cumsum/p_sum, n))
             rnd = random.random()
 
@@ -135,35 +134,37 @@ class Ant:
                 #Check if new cell has food
                 if self.current_node.contains_food:
                     self.found_food = True
-                    self.pheromone_increment = 1
+                    self.pheromone_increment = 1.8
             else:
                 if len(self.path) > 0:
                     self.prev_node = self.current_node
                     self.current_node = self.path[len(self.path)-1]
                     self.path.pop()
                 else:
-                    self.is_done = True
+                    self.found_food = False
 
             self.prev_node.ant_exit()
             self.current_node.ant_enter(self.pheromone_increment)
 
 class AntController:
-    def __init__(self, ants_amount, ants_per_tick):
-        self.ants_amount = ants_amount
+
+    def __init__(self, max_ants, ants_per_tick):
+        self.total_ants = 0
+        self.max_ants = max_ants
         self.ants_per_tick = ants_per_tick
         self.nest = None
         self.ant_list = []
         self.time_prev = time.clock()
-        self.ant_timer = 1.0
+        self.ant_timer = 0.5
         self.ant_timer_original = self.ant_timer
 
     #This can create more ants than specified but it's not really important
     def create_ants(self):
-        if self.nest is not None:
+        if self.nest is not None and self.total_ants < self.max_ants:
             for x in range(0, self.ants_per_tick):
                 a = Ant(self.nest)
                 self.ant_list.append(a)
-            self.ants_amount -= self.ants_per_tick
+            self.total_ants += self.ants_per_tick
 
     def update_timer(self):
         current_time = time.clock()
@@ -184,11 +185,10 @@ class AntController:
                 ants_to_remove.append(ant)
         if len(ants_to_remove) > 0:
             [self.ant_list.remove(ant) for ant in ants_to_remove]
-            print("Removed ants!")
 
     def update(self):
         self.update_timer()
-        if self.ant_timer < 0 < self.ants_amount:
+        if self.ant_timer < 0:
             self.create_ants()
             self.reset_timer()
         self.update_ants()

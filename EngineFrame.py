@@ -140,6 +140,7 @@ class GlobalController:
     def main(self):
         run_ant = False
         running = True
+        ticker = 0
         while running:
             #Checks for m+kb input
             run_ant, running = self.input_listen(run_ant, running)
@@ -147,18 +148,20 @@ class GlobalController:
             if self.active_mode is not None:
                 self.execute_active_mode()
 
-            self.engine.update(self.graph)
+            if ticker > 9:
+                self.engine.update(self.graph)
+                ticker = 0
             if run_ant:
                 self.ant_controller.update()
                 #Graph only updates the pheromone decay of its cells so we dont need it unless ants are active
                 self.graph.update()
-                #time.sleep(1)
+            ticker += 1
 
 tile_amount = 50
 window_size = 800
-total_ants = 100
-ants_per_tick = 10
+max_ants = 100
+ants_per_tick = 8
 
-gc = GlobalController(tile_amount, window_size, total_ants, ants_per_tick)
+gc = GlobalController(tile_amount, window_size, max_ants, ants_per_tick)
 gc.main()
 
