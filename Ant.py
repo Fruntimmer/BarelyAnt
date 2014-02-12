@@ -6,8 +6,9 @@ import random
 
 
 class Cell(GenericGridTools.GenericCell):
-    #This needs heavy tweaking
-    pheromone_decay_rate = -0.3
+    #This needs heavy tweaking. Is measured in decay/second
+    pheromone_decay_rate = -0.2
+    pheromone_cap = 6
 
     def __init__(self, x, y):
         GenericGridTools.GenericCell.__init__(self, x, y)
@@ -33,8 +34,10 @@ class Cell(GenericGridTools.GenericCell):
 
     def change_pheromone(self, increment):
         self.pheromone += increment
-        self.pheromone = max(0, self.pheromone)
-        self.change_color(increment)
+        self.pheromone = min(self.pheromone_cap, max(0, self.pheromone))
+        #if check to prevent wall colour from decaying
+        if self.pheromone > 0:
+            self.change_color(increment)
 
     def change_color(self, increment):
         increment *= -1
@@ -72,6 +75,7 @@ class Graph(GenericGridTools.GenericGraph):
 
 class Ant:
 
+    base_chance = 2.5
     def __init__(self, start_node):
         self.current_node = start_node
         self.current_node.ant_enter(0)
@@ -93,46 +97,55 @@ class Ant:
         possible_moves = []
         choices = []
         cumsum = 0.0
+        #This is important. Closely related to pheromone increment and decay
+
         for n in neighbours:
             if not n.closed and n is not self.prev_node:
                 possible_moves.append(n)
-                p_sum += n.pheromone+1
+                p_sum += n.pheromone+self.base_chance
         if p_sum > 0:
             possible_moves.sort(key=lambda x: x.pheromone, reverse=True)
             for n in possible_moves:
-                cumsum += n.pheromone+1
+                cumsum += n.pheromone+self.base_chance
                 choices.append((cumsum/p_sum, n))
             rnd = random.random()
 
             for c in choices:
                 if c[0] > rnd:
                     return c[1]
-
-        return random.choice(possible_moves)
+        #This only happens if user is painting walls
+        return None
 
     def determine_move(self):
-        if not self.found_food:
-            #This choice needs to be weighted by pheromone levels, current version is just to test.
-            chosen_move = self.weighted_choice(self.current_node.neighbours.values())
-
-            self.prev_node = self.current_node
-            self.path.append(self.prev_node)
-            self.current_node = chosen_move
-
-            #Check if new cell has food
-            if self.current_node.contains_food:
-                self.found_food = True
-                self.pheromone_increment = 1
+        if self.current_node.closed or len(self.current_node.neighbours.values()) < 1:
+            self.is_done = True
         else:
-            if len(self.path) > 0:
-                self.prev_node = self.current_node
-                self.current_node = self.path[len(self.path)-1]
-                self.path.pop()
-            else:
-                self.is_done = True
+            if not self.found_food:
+                #This choice needs to be weighted by pheromone levels, current version is just to test.
+                chosen_move = self.weighted_choice(self.current_node.neighbours.values())
+                #This only happens if user is painting walls
+                if chosen_move is None:
+                    self.is_done = True
+                    return
 
-        self.prev_node.ant_exit()
-        self.current_node.ant_enter(self.pheromone_increment)
+                self.prev_node = self.current_node
+                self.path.append(self.prev_node)
+                self.current_node = chosen_move
+
+                #Check if new cell has food
+                if self.current_node.contains_food:
+                    self.found_food = True
+                    self.pheromone_increment = 1
+            else:
+                if len(self.path) > 0:
+                    self.prev_node = self.current_node
+                    self.current_node = self.path[len(self.path)-1]
+                    self.path.pop()
+                else:
+                    self.is_done = True
+
+            self.prev_node.ant_exit()
+            self.current_node.ant_enter(self.pheromone_increment)
 
 class AntController:
     def __init__(self, ants_amount, ants_per_tick):
@@ -171,6 +184,7 @@ class AntController:
                 ants_to_remove.append(ant)
         if len(ants_to_remove) > 0:
             [self.ant_list.remove(ant) for ant in ants_to_remove]
+            print("Removed ants!")
 
     def update(self):
         self.update_timer()
