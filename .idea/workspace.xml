@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="">
+    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="Further tweaking. Rendering every tenth frame.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ant.py" afterPath="$PROJECT_DIR$/Ant.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EngineFrame.py" afterPath="$PROJECT_DIR$/EngineFrame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ant.iws" />
@@ -31,7 +29,7 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="161" column="14" selection-start="6209" selection-end="6209" vertical-scroll-proportion="0.0" vertical-offset="2331" max-vertical-offset="2941">
+            <state line="106" column="23" selection-start="3907" selection-end="3907" vertical-scroll-proportion="0.0" vertical-offset="1701" max-vertical-offset="2941">
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -42,7 +40,7 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="23" selection-start="224" selection-end="224" vertical-scroll-proportion="0.25081968" vertical-offset="17" max-vertical-offset="3451">
+            <state line="13" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="0.3622951" vertical-offset="0" max-vertical-offset="3434">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -50,10 +48,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="testfile.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state line="6" column="16" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
               <folding />
             </state>
           </provider>
@@ -75,6 +82,9 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -86,8 +96,9 @@
         <option value="$PROJECT_DIR$/../GenericGridTools.py" />
         <option value="$PROJECT_DIR$/GenericGridTools.py" />
         <option value="$PROJECT_DIR$/../../JumpPoint/gameFrame.py" />
-        <option value="$PROJECT_DIR$/testfile.py" />
         <option value="$PROJECT_DIR$/EngineFrame.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/testfile.py" />
         <option value="$PROJECT_DIR$/Ant.py" />
       </list>
     </option>
@@ -441,12 +452,18 @@
       <created>1392127417647</created>
       <updated>1392127417647</updated>
     </task>
+    <task id="LOCAL-00001" summary="Further tweaking. Rendering every tenth frame.">
+      <created>1392236881652</created>
+      <updated>1392236881652</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -478,6 +495,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Further tweaking. Rendering every tenth frame." />
+    <option name="LAST_COMMIT_MESSAGE" value="Further tweaking. Rendering every tenth frame." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -539,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="42" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1870">
@@ -553,9 +565,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="16" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="14" selection-start="6209" selection-end="6209" vertical-scroll-proportion="0.0" vertical-offset="2331" max-vertical-offset="2941">
+        <state line="106" column="23" selection-start="3907" selection-end="3907" vertical-scroll-proportion="0.0" vertical-offset="1701" max-vertical-offset="2941">
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -564,7 +590,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="224" selection-end="224" vertical-scroll-proportion="0.25081968" vertical-offset="17" max-vertical-offset="3451">
+        <state line="13" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="0.3622951" vertical-offset="0" max-vertical-offset="3434">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

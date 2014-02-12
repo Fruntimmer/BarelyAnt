@@ -7,9 +7,10 @@ import random
 
 class Cell(GenericGridTools.GenericCell):
     #This needs heavy tweaking. Is measured in decay/second
-    pheromone_decay_rate = -2
-    pheromone_cap = 100
+    pheromone_cap = 200
     base_chance = 30
+    pheromone_decay_rate = base_chance*-0.13
+    pheromone_increment = base_chance*0.15
 
     def __init__(self, x, y):
         GenericGridTools.GenericCell.__init__(self, x, y)
@@ -18,14 +19,13 @@ class Cell(GenericGridTools.GenericCell):
         self.contains_food = False
         self.time_prev = time.clock()
 
-    def ant_enter(self, pheromone_increase):
-        self.change_pheromone(pheromone_increase)
-        if not self.contains_ant:
+    def ant_enter(self):
             self.contains_ant = True
 
     def ant_exit(self):
-        if self.contains_ant:
             self.contains_ant = False
+    def put_pheromone(self):
+        self.change_pheromone(self.pheromone_increment)
 
     def pheromone_decay(self):
         delta_time = time.clock() - self.time_prev
@@ -35,6 +35,7 @@ class Cell(GenericGridTools.GenericCell):
     def change_pheromone(self, increment):
         self.pheromone += increment
         self.pheromone = min(self.pheromone_cap, max(0, self.pheromone))
+
         #if check to prevent wall colour from decaying
         if self.pheromone > 0:
             self.change_color(increment)
@@ -77,10 +78,9 @@ class Ant:
 
     def __init__(self, start_node):
         self.current_node = start_node
-        self.current_node.ant_enter(0)
+        self.current_node.ant_enter()
         self.prev_node = None
         self.path = []
-        self.pheromone_increment = 0
         self.found_food = False
         self.is_done = False
 
@@ -134,17 +134,17 @@ class Ant:
                 #Check if new cell has food
                 if self.current_node.contains_food:
                     self.found_food = True
-                    self.pheromone_increment = 1.8
             else:
                 if len(self.path) > 0:
                     self.prev_node = self.current_node
-                    self.current_node = self.path[len(self.path)-1]
-                    self.path.pop()
+                    self.current_node = self.path.pop()
+                    self.current_node.put_pheromone()
+
                 else:
                     self.found_food = False
 
             self.prev_node.ant_exit()
-            self.current_node.ant_enter(self.pheromone_increment)
+            self.current_node.ant_enter()
 
 class AntController:
 
