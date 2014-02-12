@@ -6,7 +6,8 @@ import random
 
 
 class Cell(GenericGridTools.GenericCell):
-    pheromone_decay_rate = 0.1
+    #This needs heavy tweaking
+    pheromone_decay_rate = -0.001
 
     def __init__(self, x, y):
         GenericGridTools.GenericCell.__init__(self, x, y)
@@ -24,11 +25,18 @@ class Cell(GenericGridTools.GenericCell):
             self.contains_ant = False
 
     def pheromone_decay(self):
-        self.change_pheromone(self, self.pheromone_decay_rate)
+        self.change_pheromone(self.pheromone_decay_rate)
 
     def change_pheromone(self, increment):
         self.pheromone += increment
-        #Do something about color
+        self.pheromone = max(0, self.pheromone)
+        self.change_color(increment)
+
+    def change_color(self, increment):
+        increment *= -1
+        col_multiplier = 10
+        self.color = (self.color[0], self.color[1]+(increment*col_multiplier), self.color[2]+(increment*col_multiplier))
+        self.color = (self.color[0], min(255, max(0, self.color[1])), min(255, max(0, self.color[2])))
 
     def add_food(self):
         self.contains_food = True
@@ -48,6 +56,14 @@ class Graph(GenericGridTools.GenericGraph):
                 new_cell = Cell(x, y)
                 self.check_neighbours(new_cell, x, y)
                 self.grid[x][y] = new_cell
+
+    def decay_all_cells(self):
+        for x in range(0, self.tile_amount):
+            for y in range(0, self.tile_amount):
+                self.grid[x][y].pheromone_decay()
+
+    def update(self):
+        self.decay_all_cells()
 
 
 class Ant:
@@ -71,6 +87,7 @@ class Ant:
     def determine_move(self):
         possible_moves = []
         if not self.found_food:
+            #This choice needs to be weighted by pheromone levels, current version is just to test.
             for n in self.current_node.neighbours.values():
                 if not n.closed and n is not self.prev_node:
                     possible_moves.append(n)
@@ -87,7 +104,6 @@ class Ant:
                 self.prev_node = self.current_node
                 self.current_node = self.path[len(self.path)-1]
                 self.path.pop()
-                print("Dude I found food!")
             else:
                 self.is_done = True
 
@@ -141,5 +157,3 @@ class AntController:
         self.update_ants()
         self.remove_dead_ants()
 
-
-#ac = AntController(100, 10, GridTools.Cell(5, 6))

@@ -26,7 +26,7 @@ class GraphEngine:
         color = node.color
         if node.contains_ant:
             border *=5
-            color = (20, 20, 20, 155)
+            color = (20, 20, 20)
         pygame.draw.rect(self.screen, color, [node.x*tile_size, node.y*tile_size, tile_size-border, tile_size-border])
 
     #def display_all_ants(self, ant_list):
@@ -41,10 +41,10 @@ class GraphEngine:
 
 
 class GlobalController:
-    def __init__(self):
-        self.graph = Ant.Graph(50)
-        self.engine = GraphEngine(self.graph, 800, self.graph.tile_amount)
-        self.ant_controller = Ant.AntController(100,10)
+    def __init__(self, tile_amount, window_size, total_ants, ants_per_tick):
+        self.graph = Ant.Graph(tile_amount)
+        self.engine = GraphEngine(self.graph, window_size, self.graph.tile_amount)
+        self.ant_controller = Ant.AntController(total_ants, ants_per_tick)
         self.active_mode = None
 
     def get_grid_mouse_pos(self, tile_size):
@@ -150,9 +150,15 @@ class GlobalController:
             self.engine.update(self.graph)
             if run_ant:
                 self.ant_controller.update()
-                time.sleep(1)
+                #Graph only updates the pheromone decay of its cells so we dont need it unless ants are active
+                self.graph.update()
+                #time.sleep(1)
 
+tile_amount = 50
+window_size = 800
+total_ants = 100
+ants_per_tick = 10
 
-gc = GlobalController()
+gc = GlobalController(tile_amount, window_size, total_ants, ants_per_tick)
 gc.main()
 
