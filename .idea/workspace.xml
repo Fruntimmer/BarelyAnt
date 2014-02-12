@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="Further tweaking. Rendering every tenth frame.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ant.py" afterPath="$PROJECT_DIR$/Ant.py" />
+    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="Made the tweak values derive from pheromone_cap">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ant.iws" />
@@ -456,7 +455,11 @@
       <created>1392236881652</created>
       <updated>1392236881652</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Made the tweak values derive from pheromone_cap">
+      <created>1392239493503</created>
+      <updated>1392239493503</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -496,7 +499,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Further tweaking. Rendering every tenth frame." />
-    <option name="LAST_COMMIT_MESSAGE" value="Further tweaking. Rendering every tenth frame." />
+    <MESSAGE value="Made the tweak values derive from pheromone_cap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made the tweak values derive from pheromone_cap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
