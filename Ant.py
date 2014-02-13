@@ -5,10 +5,10 @@ import random
 
 class Pheromone():
 
-    base_chance = 50
+    base_chance = 150
     pheromone_cap = 1000
-    pheromone_increment_mult = 0.03
-    pheromone_decay_rate = pheromone_cap*-0.025
+    pheromone_increment_mult = 0.02
+    pheromone_decay_rate = -50
     #a mask: 1 to use col 0 to mask (1, 0 ,0) gives only red
     def __init__(self, color_mask):
         self.color_mask = color_mask
@@ -92,9 +92,7 @@ class Graph(GenericGridTools.GenericGraph):
                 self.update_cell_color(self.grid[x][y])
 
 
-
 class Ant:
-
     def __init__(self, start_node):
         self.current_node = start_node
         self.current_node.ant_enter()
@@ -104,10 +102,10 @@ class Ant:
         self.is_done = False
         self.put_type = "alfa"
         self.follow_type = "beta"
+
         #This is just for testing
         self.trips = 0
-        self.exploration = 0
-        #self.exploration = random.uniform(0.0, 0.3)
+        self.exploration = random.uniform(0.0, 0.5)
 
     def __repr__(self):
         if self.current_node is not None:
@@ -121,33 +119,16 @@ class Ant:
         cum_weights = []
         possible_moves = []
         [possible_moves.append(x) for x in neighbours if not x.closed]
-        for n in neighbours:
-            total_weight += n.pheromones[p_type].pheromone +Pheromone.base_chance
-            cum_weights.append(total_weight)
-
-        rnd = random.random() * total_weight
-        #Sort is only needed for the exploration. Would like to get rid of it.
-        choices = []
-        for i in range(0, len(possible_moves)):
-            choices.append((cum_weights[i], possible_moves[i]))
-        choices.sort(key=lambda c: c[0])
-
-        #This isnt done well but this is to prevent the exploration percentage being more powerful on higher numbers.
-        running_sum = 0
-        for x, c in enumerate(choices):
-            total = c[0]
-
-            exploration_weight = (len(choices)-(x+1))/float(len(choices))
-            exploration_factor = exploration_weight * self.exploration
-            exploration_adjust = max(0, running_sum-Pheromone.base_chance) * exploration_factor
-            running_sum += total
-            #print ("total: " +str(total) + " adjusted: " + str(max(Pheromone.base_chance, total - exploration_factor * total)))
-            if total - exploration_adjust > rnd:
-            #if total > rnd:
-                return c[1]
-        #This only happens if user is painting walls
-        print("how?")
-        return None
+        if random.random < self.exploration:
+            return random.choice(possible_moves)
+        else:
+            for n in possible_moves:
+                total_weight += n.pheromones[p_type].pheromone +Pheromone.base_chance
+                cum_weights.append(total_weight)
+            rnd = random.random() * total_weight
+            for i, total in enumerate(cum_weights):
+                if total > rnd:
+                    return possible_moves[i]
 
     def check_goal_completed(self):
         if self.current_node.contains_food and not self.found_food:

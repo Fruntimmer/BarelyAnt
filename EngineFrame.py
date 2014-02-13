@@ -170,7 +170,7 @@ class GlobalController:
             ticker += 1
 
 tile_amount = 50
-window_size = 800
+window_size = 1000
 max_ants = 100
 ants_per_tick = 8
 

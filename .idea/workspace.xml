@@ -30,7 +30,7 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="160" column="16" selection-start="6249" selection-end="6249" vertical-scroll-proportion="0.0" vertical-offset="2466" max-vertical-offset="3111">
+            <state line="165" column="23" selection-start="6401" selection-end="6401" vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="3111">
               <folding />
             </state>
           </provider>
@@ -39,9 +39,35 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="0" selection-start="3400" selection-end="3400" vertical-scroll-proportion="0.41639343" vertical-offset="1616" max-vertical-offset="4063">
+            <state line="12" column="35" selection-start="282" selection-end="282" vertical-scroll-proportion="0.34931508" vertical-offset="0" max-vertical-offset="1377">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#562#661#0" expanded="false" />
+                <element signature="e#714#869#0" expanded="false" />
+                <element signature="e#919#1968#0" expanded="false" />
+                <element signature="e#953#1253#0" expanded="false" />
+                <element signature="e#1288#1312#0" expanded="false" />
+                <element signature="e#1346#1371#0" expanded="false" />
+                <element signature="e#1416#1453#0" expanded="false" />
+                <element signature="e#1500#1638#0" expanded="false" />
+                <element signature="e#1676#1909#0" expanded="false" />
+                <element signature="e#1943#1968#0" expanded="false" />
+                <element signature="e#2019#2937#0" expanded="false" />
+                <element signature="e#2060#2204#0" expanded="false" />
+                <element signature="e#2241#2555#0" expanded="false" />
+                <element signature="e#2594#2653#0" expanded="false" />
+                <element signature="e#2699#2715#0" expanded="false" />
+                <element signature="e#2747#2937#0" expanded="false" />
+                <element signature="e#4256#4619#0" expanded="false" />
+                <element signature="e#4659#5451#0" expanded="false" />
+                <element signature="e#5479#6935#0" expanded="false" />
+                <element signature="e#5532#5795#0" expanded="false" />
+                <element signature="e#5908#6145#0" expanded="false" />
+                <element signature="e#6183#6304#0" expanded="false" />
+                <element signature="e#6341#6381#0" expanded="false" />
+                <element signature="e#6418#6464#0" expanded="false" />
+                <element signature="e#6506#6732#0" expanded="false" />
+                <element signature="e#6764#6935#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -480,7 +506,11 @@
       <created>1392310020720</created>
       <updated>1392310020720</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implemented a badly working exploration factor in ants">
+      <created>1392329096472</created>
+      <updated>1392329096472</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -524,7 +554,8 @@
     <MESSAGE value="thursday start" />
     <MESSAGE value="Single pheromone. Caps at 1." />
     <MESSAGE value="Double pheromone implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Double pheromone implemented." />
+    <MESSAGE value="Implemented a badly working exploration factor in ants" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented a badly working exploration factor in ants" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -544,6 +575,32 @@
         <state line="11" column="41" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3417">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#562#661#0" expanded="false" />
+            <element signature="e#714#869#0" expanded="false" />
+            <element signature="e#919#1968#0" expanded="false" />
+            <element signature="e#953#1253#0" expanded="false" />
+            <element signature="e#1288#1312#0" expanded="false" />
+            <element signature="e#1346#1371#0" expanded="false" />
+            <element signature="e#1416#1453#0" expanded="false" />
+            <element signature="e#1500#1638#0" expanded="false" />
+            <element signature="e#1676#1909#0" expanded="false" />
+            <element signature="e#1943#1968#0" expanded="false" />
+            <element signature="e#2019#2937#0" expanded="false" />
+            <element signature="e#2060#2204#0" expanded="false" />
+            <element signature="e#2241#2555#0" expanded="false" />
+            <element signature="e#2594#2653#0" expanded="false" />
+            <element signature="e#2699#2715#0" expanded="false" />
+            <element signature="e#2747#2937#0" expanded="false" />
+            <element signature="e#4256#4619#0" expanded="false" />
+            <element signature="e#4659#5451#0" expanded="false" />
+            <element signature="e#5479#6935#0" expanded="false" />
+            <element signature="e#5532#5795#0" expanded="false" />
+            <element signature="e#5908#6145#0" expanded="false" />
+            <element signature="e#6183#6304#0" expanded="false" />
+            <element signature="e#6341#6381#0" expanded="false" />
+            <element signature="e#6418#6464#0" expanded="false" />
+            <element signature="e#6506#6732#0" expanded="false" />
+            <element signature="e#6764#6935#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -581,6 +638,32 @@
         <state line="62" column="22" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1360">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#562#661#0" expanded="false" />
+            <element signature="e#714#869#0" expanded="false" />
+            <element signature="e#919#1968#0" expanded="false" />
+            <element signature="e#953#1253#0" expanded="false" />
+            <element signature="e#1288#1312#0" expanded="false" />
+            <element signature="e#1346#1371#0" expanded="false" />
+            <element signature="e#1416#1453#0" expanded="false" />
+            <element signature="e#1500#1638#0" expanded="false" />
+            <element signature="e#1676#1909#0" expanded="false" />
+            <element signature="e#1943#1968#0" expanded="false" />
+            <element signature="e#2019#2937#0" expanded="false" />
+            <element signature="e#2060#2204#0" expanded="false" />
+            <element signature="e#2241#2555#0" expanded="false" />
+            <element signature="e#2594#2653#0" expanded="false" />
+            <element signature="e#2699#2715#0" expanded="false" />
+            <element signature="e#2747#2937#0" expanded="false" />
+            <element signature="e#4256#4619#0" expanded="false" />
+            <element signature="e#4659#5451#0" expanded="false" />
+            <element signature="e#5479#6935#0" expanded="false" />
+            <element signature="e#5532#5795#0" expanded="false" />
+            <element signature="e#5908#6145#0" expanded="false" />
+            <element signature="e#6183#6304#0" expanded="false" />
+            <element signature="e#6341#6381#0" expanded="false" />
+            <element signature="e#6418#6464#0" expanded="false" />
+            <element signature="e#6506#6732#0" expanded="false" />
+            <element signature="e#6764#6935#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -640,16 +723,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="16" selection-start="6249" selection-end="6249" vertical-scroll-proportion="0.0" vertical-offset="2466" max-vertical-offset="3111">
+        <state line="165" column="23" selection-start="6401" selection-end="6401" vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="3111">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="3400" selection-end="3400" vertical-scroll-proportion="0.41639343" vertical-offset="1616" max-vertical-offset="4063">
+        <state line="12" column="35" selection-start="282" selection-end="282" vertical-scroll-proportion="0.34931508" vertical-offset="0" max-vertical-offset="1377">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#562#661#0" expanded="false" />
+            <element signature="e#714#869#0" expanded="false" />
+            <element signature="e#919#1968#0" expanded="false" />
+            <element signature="e#953#1253#0" expanded="false" />
+            <element signature="e#1288#1312#0" expanded="false" />
+            <element signature="e#1346#1371#0" expanded="false" />
+            <element signature="e#1416#1453#0" expanded="false" />
+            <element signature="e#1500#1638#0" expanded="false" />
+            <element signature="e#1676#1909#0" expanded="false" />
+            <element signature="e#1943#1968#0" expanded="false" />
+            <element signature="e#2019#2937#0" expanded="false" />
+            <element signature="e#2060#2204#0" expanded="false" />
+            <element signature="e#2241#2555#0" expanded="false" />
+            <element signature="e#2594#2653#0" expanded="false" />
+            <element signature="e#2699#2715#0" expanded="false" />
+            <element signature="e#2747#2937#0" expanded="false" />
+            <element signature="e#4256#4619#0" expanded="false" />
+            <element signature="e#4659#5451#0" expanded="false" />
+            <element signature="e#5479#6935#0" expanded="false" />
+            <element signature="e#5532#5795#0" expanded="false" />
+            <element signature="e#5908#6145#0" expanded="false" />
+            <element signature="e#6183#6304#0" expanded="false" />
+            <element signature="e#6341#6381#0" expanded="false" />
+            <element signature="e#6418#6464#0" expanded="false" />
+            <element signature="e#6506#6732#0" expanded="false" />
+            <element signature="e#6764#6935#0" expanded="false" />
           </folding>
         </state>
       </provider>
