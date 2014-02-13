@@ -8,8 +8,8 @@ class Cell(GenericGridTools.GenericCell):
     #This needs heavy tweaking. Is measured in decay/second
     base_chance = .001
     pheromone_cap = 1
-    pheromone_increment = base_chance*1
-    pheromone_decay_rate = pheromone_increment*-.7
+    pheromone_increment_mult = 0.1
+    pheromone_decay_rate = pheromone_cap*-0.01
 
     def __init__(self, x, y):
         GenericGridTools.GenericCell.__init__(self, x, y)
@@ -23,8 +23,10 @@ class Cell(GenericGridTools.GenericCell):
 
     def ant_exit(self):
             self.contains_ant = False
+
     def put_pheromone(self):
-        self.change_pheromone(self.pheromone_increment)
+        increment = (self.pheromone_cap - self.pheromone) * self.pheromone_increment_mult
+        self.change_pheromone(increment)
 
     def pheromone_decay(self):
         delta_time = time.clock() - self.time_prev
@@ -34,7 +36,6 @@ class Cell(GenericGridTools.GenericCell):
     def change_pheromone(self, increment):
         self.pheromone += increment
         self.pheromone = min(self.pheromone_cap, max(0, self.pheromone))
-
         #if check to prevent wall colour from decaying
         if self.pheromone > 0:
             self.change_color(increment)
