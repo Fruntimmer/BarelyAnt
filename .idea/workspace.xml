@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="">
+    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="Made the tweak values derive from pheromone_cap">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ant.py" afterPath="$PROJECT_DIR$/Ant.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EngineFrame.py" afterPath="$PROJECT_DIR$/EngineFrame.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ant.iws" />
@@ -30,10 +29,8 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="60" selection-start="4277" selection-end="4277" vertical-scroll-proportion="0.0" vertical-offset="1412" max-vertical-offset="3043">
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state line="116" column="60" selection-start="4277" selection-end="4277" vertical-scroll-proportion="0.0" vertical-offset="1378" max-vertical-offset="3009">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -41,7 +38,7 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="41" selection-start="279" selection-end="279" vertical-scroll-proportion="0.32020548" vertical-offset="0" max-vertical-offset="3417">
+            <state line="9" column="21" selection-start="199" selection-end="199" vertical-scroll-proportion="0.25081968" vertical-offset="0" max-vertical-offset="3417">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -70,7 +67,7 @@
       <file leaf-file-name="GenericGridTools.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="42" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1870">
+            <state line="39" column="13" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1870">
               <folding />
             </state>
           </provider>
@@ -105,7 +102,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -135,6 +133,20 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ant">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -159,20 +171,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Ant" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Ant">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -465,14 +463,17 @@
       <created>1392239710552</created>
       <updated>1392239710553</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Made the tweak values derive from pheromone_cap">
+      <created>1392249676820</created>
+      <updated>1392249676820</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -485,11 +486,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -516,10 +518,45 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="18" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="2312">
+        <state line="116" column="60" selection-start="4277" selection-end="4277" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3043">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="41" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3417">
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="42" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EngineFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="18" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="2312">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -541,9 +578,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../JumpPoint/gTools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="18" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312">
-          <folding />
-        </state>
+        <state line="15" column="18" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../GridTools.py">
@@ -563,31 +598,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../JumpPoint/gameFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="263" selection-end="263" vertical-scroll-proportion="-1.0590163" vertical-offset="816" max-vertical-offset="2193">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="42" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1870">
-          <folding />
-        </state>
+        <state line="12" column="13" selection-start="263" selection-end="263" vertical-scroll-proportion="-1.0590163" vertical-offset="816" max-vertical-offset="2193" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EngineFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="60" selection-start="4277" selection-end="4277" vertical-scroll-proportion="0.0" vertical-offset="1412" max-vertical-offset="3043">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -598,9 +615,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EngineFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="60" selection-start="4277" selection-end="4277" vertical-scroll-proportion="0.0" vertical-offset="1412" max-vertical-offset="3043">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="13" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="279" selection-end="279" vertical-scroll-proportion="0.32020548" vertical-offset="0" max-vertical-offset="3417">
+        <state line="9" column="21" selection-start="199" selection-end="199" vertical-scroll-proportion="0.25081968" vertical-offset="0" max-vertical-offset="3417">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

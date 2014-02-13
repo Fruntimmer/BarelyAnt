@@ -6,10 +6,10 @@ import random
 
 class Cell(GenericGridTools.GenericCell):
     #This needs heavy tweaking. Is measured in decay/second
-    pheromone_cap = 40
-    base_chance = 1
-    pheromone_increment = base_chance*8
-    pheromone_decay_rate = base_chance*-5
+    base_chance = .001
+    pheromone_cap = 1
+    pheromone_increment = base_chance*1
+    pheromone_decay_rate = pheromone_increment*-.7
 
     def __init__(self, x, y):
         GenericGridTools.GenericCell.__init__(self, x, y)
@@ -95,19 +95,19 @@ class Ant:
         possible_moves = []
         choices = []
         cumsum = 0.0
-        #This is important. Closely related to pheromone increment and decay
 
         for n in neighbours:
             if not n.closed and n is not self.prev_node:
                 possible_moves.append(n)
                 p_sum += n.pheromone+n.base_chance
+        #Order list of possible choices with 'best' choice first
         if p_sum > 0:
             possible_moves.sort(key=lambda x: x.pheromone, reverse=True)
             for n in possible_moves:
                 cumsum += n.pheromone+n.base_chance
                 choices.append((cumsum/p_sum, n))
-            rnd = random.random()
 
+            rnd = random.random()
             for c in choices:
                 if c[0] > rnd:
                     return c[1]
