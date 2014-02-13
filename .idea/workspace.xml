@@ -30,7 +30,7 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="47" selection-start="2423" selection-end="2423" vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="3094">
+            <state line="160" column="16" selection-start="6249" selection-end="6249" vertical-scroll-proportion="0.0" vertical-offset="2466" max-vertical-offset="3111">
               <folding />
             </state>
           </provider>
@@ -39,7 +39,7 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="30" selection-start="5463" selection-end="5463" vertical-scroll-proportion="0.30491802" vertical-offset="2602" max-vertical-offset="3825">
+            <state line="110" column="0" selection-start="3400" selection-end="3400" vertical-scroll-proportion="0.41639343" vertical-offset="1616" max-vertical-offset="4063">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -59,7 +59,7 @@
       <file leaf-file-name="testfile.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testfile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+            <state line="15" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
               <folding />
             </state>
           </provider>
@@ -180,7 +180,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../GridTools.py" />
-    <property name="SearchEverywhereHistory" value="" />
+    <property name="SearchEverywhereHistory" value="ran" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
   </component>
@@ -476,7 +476,11 @@
       <created>1392304549960</created>
       <updated>1392304549960</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Double pheromone implemented.">
+      <created>1392310020720</created>
+      <updated>1392310020720</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -519,7 +523,8 @@
     <MESSAGE value="Made the tweak values derive from pheromone_cap" />
     <MESSAGE value="thursday start" />
     <MESSAGE value="Single pheromone. Caps at 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Single pheromone. Caps at 1." />
+    <MESSAGE value="Double pheromone implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Double pheromone implemented." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -619,13 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="13" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1870">
@@ -633,16 +631,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="47" selection-start="2423" selection-end="2423" vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="3094">
+        <state line="160" column="16" selection-start="6249" selection-end="6249" vertical-scroll-proportion="0.0" vertical-offset="2466" max-vertical-offset="3111">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="30" selection-start="5463" selection-end="5463" vertical-scroll-proportion="0.30491802" vertical-offset="2602" max-vertical-offset="3825">
+        <state line="110" column="0" selection-start="3400" selection-end="3400" vertical-scroll-proportion="0.41639343" vertical-offset="1616" max-vertical-offset="4063">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

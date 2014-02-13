@@ -24,13 +24,13 @@ class GraphEngine:
 
     def display_cell(self, node, tile_size, border):
         color = node.color
-        if node.is_nest:
-            color = (0, 255, 0)
-        elif node.contains_food:
-            color = (255, 255, 0)
+        if node.is_nest or node.contains_food:
+            color = (255, 0, 0)
         elif node.contains_ant:
             border *=5
             color = (20, 20, 20)
+        elif node.closed:
+            color = (155, 155 ,155)
         pygame.draw.rect(self.screen, color, [node.x*tile_size, node.y*tile_size, tile_size-border, tile_size-border])
 
     #def display_all_ants(self, ant_list):
@@ -89,7 +89,8 @@ class GlobalController:
         return active_mode
 
     def middle_click(self, grid, x, y):
-        print(grid[x][y].pheromone)
+        print("alfa: " + str(grid[x][y].pheromones["alfa"].pheromone))
+        print("beta: " + str(grid[x][y].pheromones["beta"].pheromone))
 
     def right_click(self, current_selection, grid, x, y):
         #Displays the neighbours of right clicked squares
