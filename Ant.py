@@ -1,16 +1,15 @@
 import GenericGridTools
 import time
-import operator
 import random
 
 
 
 class Cell(GenericGridTools.GenericCell):
     #This needs heavy tweaking. Is measured in decay/second
-    pheromone_cap = 200
-    base_chance = 30
-    pheromone_decay_rate = base_chance*-0.13
-    pheromone_increment = base_chance*0.15
+    pheromone_cap = 40
+    base_chance = 1
+    pheromone_increment = base_chance*8
+    pheromone_decay_rate = base_chance*-5
 
     def __init__(self, x, y):
         GenericGridTools.GenericCell.__init__(self, x, y)

@@ -83,6 +83,9 @@ class GlobalController:
             active_mode = "paintOpen"
         return active_mode
 
+    def middle_click(self, grid, x, y):
+        print(grid[x][y].pheromone)
+
     def right_click(self, current_selection, grid, x, y):
         #Displays the neighbours of right clicked squares
         if current_selection is not None:
@@ -109,6 +112,9 @@ class GlobalController:
 
                 if b1:
                     self.active_mode = self.left_click(self.graph.grid, x, y)
+
+                if b2:
+                    self.middle_click(self.graph.grid, x, y)
 
                 if b3:
                     self.current_selection = self.right_click(self.current_selection, self.graph.grid, x, y)
