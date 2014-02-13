@@ -3,33 +3,22 @@ import time
 import random
 
 
+class Pheromone():
 
-class Cell(GenericGridTools.GenericCell):
-    #This needs heavy tweaking. Is measured in decay/second
-    base_chance = .001
-    pheromone_cap = 1
-    pheromone_increment_mult = 0.1
-    pheromone_decay_rate = pheromone_cap*-0.01
-
-    def __init__(self, x, y):
-        GenericGridTools.GenericCell.__init__(self, x, y)
-        self.pheromone = float(0.0)
-        self.contains_ant = False
-        self.contains_food = False
-        self.time_prev = time.clock()
-
-    def ant_enter(self):
-            self.contains_ant = True
-
-    def ant_exit(self):
-            self.contains_ant = False
+    base_chance = 1
+    pheromone_cap = 1000
+    pheromone_increment_mult = 0.03
+    pheromone_decay_rate = pheromone_cap*-0.05
+    #a mask: 1 to use col 0 to mask (1, 0 ,0) gives only red
+    def __init__(self, color_mask):
+        self.color_mask = color_mask
+        self.pheromone = 0.0
 
     def put_pheromone(self):
         increment = (self.pheromone_cap - self.pheromone) * self.pheromone_increment_mult
         self.change_pheromone(increment)
 
-    def pheromone_decay(self):
-        delta_time = time.clock() - self.time_prev
+    def pheromone_decay(self, delta_time):
         self.change_pheromone(self.pheromone_decay_rate * delta_time)
         self.time_prev = time.clock()
 
@@ -37,14 +26,38 @@ class Cell(GenericGridTools.GenericCell):
         self.pheromone += increment
         self.pheromone = min(self.pheromone_cap, max(0, self.pheromone))
         #if check to prevent wall colour from decaying
-        if self.pheromone > 0:
-            self.change_color(increment)
 
-    def change_color(self, increment):
-        #increment *= -1
-        #col_multiplier = 20
-        self.color = (self.color[0], 255-(self.pheromone/self.pheromone_cap)*255, 255-(self.pheromone/self.pheromone_cap)*255)
-        #self.color = (self.color[0], min(255, max(0, self.color[1])), min(255, max(0, self.color[2])))
+
+class Cell(GenericGridTools.GenericCell):
+
+    def __init__(self, x, y):
+        GenericGridTools.GenericCell.__init__(self, x, y)
+        self.pheromones = {"alfa" : Pheromone((0, 0, 0)),
+                          "beta" : Pheromone((0, 0, 1))}
+        self.contains_ant = False
+        self.contains_food = False
+        self.is_nest = False
+        self.time_prev = time.clock()
+
+    def ant_enter(self):
+        self.contains_ant = True
+
+    def ant_exit(self):
+        self.contains_ant = False
+
+    def put_pheromone(self, type):
+        self.pheromones[type].put_pheromone()
+
+    def pheromone_decay(self, type):
+        delta_time = time.clock() - self.time_prev
+        self.pheromones[type].pheromone_decay(delta_time)
+        self.time_prev = time.clock()
+
+    def update_color(self):
+        new_col = (self.pheromones["alfa"].pheromone/Pheromone.pheromone_cap,
+                   0, self.pheromones["beta"].pheromone/Pheromone.pheromone_cap)
+
+        self.color = (255-new_col[0]*255, 255-new_col[1]*255, 255-new_col[2]*255)
 
     def add_food(self):
         self.contains_food = True
@@ -65,13 +78,19 @@ class Graph(GenericGridTools.GenericGraph):
                 self.check_neighbours(new_cell, x, y)
                 self.grid[x][y] = new_cell
 
-    def decay_all_cells(self):
-        for x in range(0, self.tile_amount):
-            for y in range(0, self.tile_amount):
-                self.grid[x][y].pheromone_decay()
+    def decay_cell(self, n):
+        n.pheromone_decay("alfa")
+        n.pheromone_decay("beta")
+
+    def update_cell_color(self, n):
+        n.update_color()
 
     def update(self):
-        self.decay_all_cells()
+        for x in range(0, self.tile_amount):
+            for y in range(0, self.tile_amount):
+                self.decay_cell(self.grid[x][y])
+                self.update_cell_color(self.grid[x][y])
+
 
 
 class Ant:
@@ -83,6 +102,10 @@ class Ant:
         self.path = []
         self.found_food = False
         self.is_done = False
+        self.put_type = "alfa"
+        self.follow_type = "beta"
+        #This is just for testing
+        self.trips = 0
 
     def __repr__(self):
         if self.current_node is not None:
@@ -91,7 +114,7 @@ class Ant:
     def update(self):
         self.determine_move()
 
-    def weighted_choice(self, neighbours):
+    def weighted_choice(self, neighbours, type):
         p_sum = 0.0
         possible_moves = []
         choices = []
@@ -100,12 +123,12 @@ class Ant:
         for n in neighbours:
             if not n.closed and n is not self.prev_node:
                 possible_moves.append(n)
-                p_sum += n.pheromone+n.base_chance
+                p_sum += n.pheromones[type].pheromone+Pheromone.base_chance
         #Order list of possible choices with 'best' choice first
         if p_sum > 0:
-            possible_moves.sort(key=lambda x: x.pheromone, reverse=True)
+            possible_moves.sort(key=lambda x: x.pheromones[type].pheromone, reverse=True)
             for n in possible_moves:
-                cumsum += n.pheromone+n.base_chance
+                cumsum += n.pheromones[type].pheromone+Pheromone.base_chance
                 choices.append((cumsum/p_sum, n))
 
             rnd = random.random()
@@ -119,29 +142,29 @@ class Ant:
         if self.current_node.closed or len(self.current_node.neighbours.values()) < 1:
             self.is_done = True
         else:
-            if not self.found_food:
-                #This choice needs to be weighted by pheromone levels, current version is just to test.
-                chosen_move = self.weighted_choice(self.current_node.neighbours.values())
-                #This only happens if user is painting walls
-                if chosen_move is None:
-                    self.is_done = True
-                    return
+            chosen_move = self.weighted_choice(self.current_node.neighbours.values(), self.follow_type)
+            #This if statement is only True when user paints walls during simulation
+            if chosen_move is None:
+                self.is_done = True
+                return
 
-                self.prev_node = self.current_node
-                self.path.append(self.prev_node)
-                self.current_node = chosen_move
+            self.prev_node = self.current_node
+            self.path.append(self.prev_node)
 
-                #Check if new cell has food
-                if self.current_node.contains_food:
-                    self.found_food = True
-            else:
-                if len(self.path) > 0:
-                    self.prev_node = self.current_node
-                    self.current_node = self.path.pop()
-                    self.current_node.put_pheromone()
+            self.current_node.put_pheromone(self.put_type)
+            self.current_node = chosen_move
 
-                else:
-                    self.found_food = False
+            #Check if ant found food
+            if self.current_node.contains_food and not self.found_food:
+                self.found_food = True
+                self.put_type = "beta"
+                self.follow_type = "alfa"
+            #Check if ant found home while carrying food
+            if self.current_node.is_nest and self.found_food:
+                self.found_food = False
+                self.put_type = "alfa"
+                self.follow_type = "beta"
+                self.trips +=1
 
             self.prev_node.ant_exit()
             self.current_node.ant_enter()

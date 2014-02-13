@@ -24,7 +24,11 @@ class GraphEngine:
 
     def display_cell(self, node, tile_size, border):
         color = node.color
-        if node.contains_ant:
+        if node.is_nest:
+            color = (0, 255, 0)
+        elif node.contains_food:
+            color = (255, 255, 0)
+        elif node.contains_ant:
             border *=5
             color = (20, 20, 20)
         pygame.draw.rect(self.screen, color, [node.x*tile_size, node.y*tile_size, tile_size-border, tile_size-border])
@@ -65,6 +69,7 @@ class GlobalController:
         if self.graph.nest_node is None:
             self.graph.nest_node = grid[x][y]
             self.graph.nest_node.color = (50, 255, 50)
+            self.graph.nest_node.is_nest = True
         elif self.graph.food_node is None:
             if(grid[x][y] is not self.graph.nest_node):
                 grid[x][y].add_food()

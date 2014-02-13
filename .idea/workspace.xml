@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ant.py" afterPath="$PROJECT_DIR$/Ant.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EngineFrame.py" afterPath="$PROJECT_DIR$/EngineFrame.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ant.iws" />
@@ -29,7 +30,7 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="60" selection-start="4277" selection-end="4277" vertical-scroll-proportion="0.0" vertical-offset="1378" max-vertical-offset="3009">
+            <state line="71" column="47" selection-start="2423" selection-end="2423" vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="3094">
               <folding />
             </state>
           </provider>
@@ -38,7 +39,7 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="35" selection-start="406" selection-end="406" vertical-scroll-proportion="0.4180328" vertical-offset="0" max-vertical-offset="3434">
+            <state line="164" column="30" selection-start="5463" selection-end="5463" vertical-scroll-proportion="0.30491802" vertical-offset="2602" max-vertical-offset="3825">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -95,8 +96,8 @@
         <option value="$PROJECT_DIR$/GenericGridTools.py" />
         <option value="$PROJECT_DIR$/../../JumpPoint/gameFrame.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/EngineFrame.py" />
         <option value="$PROJECT_DIR$/testfile.py" />
+        <option value="$PROJECT_DIR$/EngineFrame.py" />
         <option value="$PROJECT_DIR$/Ant.py" />
       </list>
     </option>
@@ -471,7 +472,11 @@
       <created>1392303882667</created>
       <updated>1392303882667</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Single pheromone. Caps at 1.">
+      <created>1392304549960</created>
+      <updated>1392304549960</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -513,11 +518,12 @@
     <MESSAGE value="Further tweaking. Rendering every tenth frame." />
     <MESSAGE value="Made the tweak values derive from pheromone_cap" />
     <MESSAGE value="thursday start" />
-    <option name="LAST_COMMIT_MESSAGE" value="thursday start" />
+    <MESSAGE value="Single pheromone. Caps at 1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Single pheromone. Caps at 1." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -620,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EngineFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="60" selection-start="4277" selection-end="4277" vertical-scroll-proportion="0.0" vertical-offset="1412" max-vertical-offset="3043">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="13" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1870">
@@ -634,9 +633,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EngineFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="47" selection-start="2423" selection-end="2423" vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="3094">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="406" selection-end="406" vertical-scroll-proportion="0.4180328" vertical-offset="0" max-vertical-offset="3434">
+        <state line="164" column="30" selection-start="5463" selection-end="5463" vertical-scroll-proportion="0.30491802" vertical-offset="2602" max-vertical-offset="3825">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
