@@ -171,7 +171,7 @@ class GlobalController:
 
 tile_amount = 50
 window_size = 1000
-max_ants = 100
+max_ants = 200
 ants_per_tick = 8
 
 gc = GlobalController(tile_amount, window_size, max_ants, ants_per_tick)

@@ -5,11 +5,11 @@ import random
 
 class Pheromone():
 
-    base_chance = 150
-    pheromone_cap = 1000
-    pheromone_increment_mult = 0.02
-    pheromone_decay_rate = -50
+    pheromone_cap = 10
+    pheromone_increment_mult = 0.1
+    pheromone_decay_rate = -0.8
     #a mask: 1 to use col 0 to mask (1, 0 ,0) gives only red
+
     def __init__(self, color_mask):
         self.color_mask = color_mask
         self.pheromone = 0.0
@@ -19,8 +19,7 @@ class Pheromone():
         self.change_pheromone(increment)
 
     def pheromone_decay(self, delta_time):
-        self.change_pheromone(self.pheromone_decay_rate * delta_time)
-        self.time_prev = time.clock()
+        self.change_pheromone((self.pheromone * self.pheromone_decay_rate) * delta_time)
 
     def change_pheromone(self, increment):
         self.pheromone += increment
@@ -102,49 +101,64 @@ class Ant:
         self.is_done = False
         self.put_type = "alfa"
         self.follow_type = "beta"
+        self.origin = start_node
+        #Ant randomness
+        self.exploration = random.uniform(0.2, 0.4)
+        self.best_bias = random.uniform(0.7, 0.9)
 
         #This is just for testing
+        self.steps = 0
+        self.start_max_step = 100
+        self.max_steps = self.start_max_step
         self.trips = 0
-        self.exploration = random.uniform(0.0, 0.5)
 
     def __repr__(self):
         if self.current_node is not None:
             return str(self.current_node.x) + " " + str(self.current_node.y)
 
-    def update(self):
-        self.determine_move()
-
     def weighted_choice(self, neighbours, p_type):
-        total_weight = 0.0
-        cum_weights = []
         possible_moves = []
         [possible_moves.append(x) for x in neighbours if not x.closed]
-        if random.random < self.exploration:
+        if random.random() > self.exploration:
             return random.choice(possible_moves)
         else:
+            possible_moves.sort(key=lambda p: p.pheromones[p_type].pheromone, reverse=True)
+            #Best_choices exists so that we dont make biased picks on 8 nodes with 0 pheromone level.
+            best_choices = []
             for n in possible_moves:
-                total_weight += n.pheromones[p_type].pheromone +Pheromone.base_chance
-                cum_weights.append(total_weight)
-            rnd = random.random() * total_weight
-            for i, total in enumerate(cum_weights):
-                if total > rnd:
-                    return possible_moves[i]
+                if n.pheromones[p_type].pheromone > 0:
+                    best_choices.append(n)
+            for n in best_choices:
+                if random.random() < self.best_bias:
+                    return n
+            return random.choice(possible_moves)
 
     def check_goal_completed(self):
         if self.current_node.contains_food and not self.found_food:
             self.found_food = True
             self.put_type = "beta"
             self.follow_type = "alfa"
+            self.origin = self.current_node
+            self.max_steps = self.start_max_step + int(((self.max_steps - self.start_max_step) * 0.3))
 
-        if self.current_node.is_nest and self.found_food:
+        elif self.current_node.is_nest and self.found_food:
             self.found_food = False
             self.put_type = "alfa"
             self.follow_type = "beta"
-            self.trips += 1
+            self.origin = self.current_node
+            self.max_steps = self.start_max_step + int(((self.max_steps - self.start_max_step) * 0.3))
 
     def determine_move(self):
+        self.steps +=1
+        chosen_move = None
         if self.current_node.closed or len(self.current_node.neighbours.values()) < 1:
             self.is_done = True
+            print("I die. This should only happen if you are drawing walls")
+        elif self.steps > self.max_steps:
+            #Ant has failed and its max range is increased
+            self.steps = 0
+            self.max_steps *= 1.1
+            chosen_move = self.origin
         else:
             chosen_move = self.weighted_choice(self.current_node.neighbours.values(), self.follow_type)
             #This if statement is only True when user paints walls during simulation
@@ -152,17 +166,21 @@ class Ant:
                 self.is_done = True
                 return
 
-            self.prev_node = self.current_node
-            self.path.append(self.prev_node)
+        self.prev_node = self.current_node
+        self.path.append(self.prev_node)
 
-            self.current_node.put_pheromone(self.put_type)
-            self.current_node = chosen_move
+        self.current_node.put_pheromone(self.put_type)
+        self.current_node = chosen_move
 
-            #Check if ant found food, or returned home with food
-            self.check_goal_completed()
+        #Check if ant found food, or returned home with food
+        self.check_goal_completed()
 
-            self.prev_node.ant_exit()
-            self.current_node.ant_enter()
+        self.prev_node.ant_exit()
+        self.current_node.ant_enter()
+
+    def update(self):
+        self.determine_move()
+
 
 class AntController:
 
@@ -173,7 +191,7 @@ class AntController:
         self.nest = None
         self.ant_list = []
         self.time_prev = time.clock()
-        self.ant_timer = 0.5
+        self.ant_timer = 1
         self.ant_timer_original = self.ant_timer
 
     #This can create more ants than specified but it's not really important
@@ -196,7 +214,7 @@ class AntController:
         for a in self.ant_list:
             a.update()
 
-    def remove_dead_ants(self):
+    def remove_done_ants(self):
         ants_to_remove = []
         for ant in self.ant_list:
             if ant.is_done:
@@ -210,5 +228,5 @@ class AntController:
             self.create_ants()
             self.reset_timer()
         self.update_ants()
-        self.remove_dead_ants()
+        self.remove_done_ants()
 
