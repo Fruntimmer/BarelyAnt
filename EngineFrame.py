@@ -27,15 +27,11 @@ class GraphEngine:
         if node.is_nest or node.contains_food:
             color = (255, 0, 0)
         elif node.contains_ant:
-            border *=5
+            border *= 5
             color = (20, 20, 20)
         elif node.closed:
             color = (155, 155 ,155)
         pygame.draw.rect(self.screen, color, [node.x*tile_size, node.y*tile_size, tile_size-border, tile_size-border])
-
-    #def display_all_ants(self, ant_list):
-        #for ant in ant_list:
-            #display_cell(ant.current_node, self.tile_size)
 
 
     def update(self, graph):
@@ -171,7 +167,7 @@ class GlobalController:
 
 tile_amount = 50
 window_size = 1000
-max_ants = 200
+max_ants = 100
 ants_per_tick = 8
 
 gc = GlobalController(tile_amount, window_size, max_ants, ants_per_tick)

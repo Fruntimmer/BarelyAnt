@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="Implemented a random exploration to the weighted choice of the Ant">
+    <list default="true" id="ec80dd91-9afc-4b0d-be02-76fd12ba03a8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ant.py" afterPath="$PROJECT_DIR$/Ant.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EngineFrame.py" afterPath="$PROJECT_DIR$/EngineFrame.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -30,7 +30,7 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="3111">
+            <state line="158" column="25" selection-start="6169" selection-end="6169" vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="3043">
               <folding />
             </state>
           </provider>
@@ -39,19 +39,11 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="31" selection-start="161" selection-end="161" vertical-scroll-proportion="0.25" vertical-offset="0" max-vertical-offset="3468">
+            <state line="144" column="31" selection-start="4809" selection-end="4809" vertical-scroll-proportion="0.3611111" vertical-offset="2142" max-vertical-offset="4046">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#1246#1270#0" expanded="false" />
-                <element signature="e#1304#1329#0" expanded="false" />
-                <element signature="e#1374#1411#0" expanded="false" />
-                <element signature="e#1634#1867#0" expanded="false" />
-                <element signature="e#1901#1926#0" expanded="false" />
-                <element signature="e#1977#2895#0" expanded="false" />
-                <element signature="e#2018#2162#0" expanded="false" />
-                <element signature="e#2552#2611#0" expanded="false" />
-                <element signature="e#2657#2673#0" expanded="false" />
-                <element signature="e#2705#2895#0" expanded="false" />
+                <element signature="e#1775#1800#0" expanded="false" />
+                <element signature="e#1892#2036#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -497,7 +489,11 @@
       <created>1392332905957</created>
       <updated>1392332905958</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="This is working kind of well. Need to improve weighted choice and then tweak values.">
+      <created>1392579569750</created>
+      <updated>1392579569750</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -508,7 +504,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.178125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -543,14 +539,93 @@
     <MESSAGE value="Double pheromone implemented." />
     <MESSAGE value="Implemented a badly working exploration factor in ants" />
     <MESSAGE value="Implemented a random exploration to the weighted choice of the Ant" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented a random exploration to the weighted choice of the Ant" />
+    <MESSAGE value="This is working kind of well. Need to improve weighted choice and then tweak values." />
+    <option name="LAST_COMMIT_MESSAGE" value="This is working kind of well. Need to improve weighted choice and then tweak values." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/EngineFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="118" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="0" selection-start="4268" selection-end="4268" vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="3009">
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#1775#1800#0" expanded="false" />
+            <element signature="e#1892#2036#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="13" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EngineFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="118" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="3077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="66" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="3485">
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#1775#1800#0" expanded="false" />
+            <element signature="e#1892#2036#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="13" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="173" column="12" selection-start="6667" selection-end="6667" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3145">
@@ -563,16 +638,8 @@
         <state line="130" column="65" selection-start="4280" selection-end="4280" vertical-scroll-proportion="0.0" vertical-offset="2176" max-vertical-offset="3281">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1246#1270#0" expanded="false" />
-            <element signature="e#1304#1329#0" expanded="false" />
-            <element signature="e#1374#1411#0" expanded="false" />
-            <element signature="e#1634#1867#0" expanded="false" />
-            <element signature="e#1901#1926#0" expanded="false" />
-            <element signature="e#1977#2895#0" expanded="false" />
-            <element signature="e#2018#2162#0" expanded="false" />
-            <element signature="e#2552#2611#0" expanded="false" />
-            <element signature="e#2657#2673#0" expanded="false" />
-            <element signature="e#2705#2895#0" expanded="false" />
+            <element signature="e#1775#1800#0" expanded="false" />
+            <element signature="e#1892#2036#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -610,16 +677,8 @@
         <state line="143" column="117" selection-start="5128" selection-end="5128" vertical-scroll-proportion="0.0" vertical-offset="2431" max-vertical-offset="3196">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1246#1270#0" expanded="false" />
-            <element signature="e#1304#1329#0" expanded="false" />
-            <element signature="e#1374#1411#0" expanded="false" />
-            <element signature="e#1634#1867#0" expanded="false" />
-            <element signature="e#1901#1926#0" expanded="false" />
-            <element signature="e#1977#2895#0" expanded="false" />
-            <element signature="e#2018#2162#0" expanded="false" />
-            <element signature="e#2552#2611#0" expanded="false" />
-            <element signature="e#2657#2673#0" expanded="false" />
-            <element signature="e#2705#2895#0" expanded="false" />
+            <element signature="e#1775#1800#0" expanded="false" />
+            <element signature="e#1892#2036#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -657,16 +716,8 @@
         <state line="12" column="35" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1377">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1246#1270#0" expanded="false" />
-            <element signature="e#1304#1329#0" expanded="false" />
-            <element signature="e#1374#1411#0" expanded="false" />
-            <element signature="e#1634#1867#0" expanded="false" />
-            <element signature="e#1901#1926#0" expanded="false" />
-            <element signature="e#1977#2895#0" expanded="false" />
-            <element signature="e#2018#2162#0" expanded="false" />
-            <element signature="e#2552#2611#0" expanded="false" />
-            <element signature="e#2657#2673#0" expanded="false" />
-            <element signature="e#2705#2895#0" expanded="false" />
+            <element signature="e#1775#1800#0" expanded="false" />
+            <element signature="e#1892#2036#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -704,16 +755,8 @@
         <state line="11" column="41" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3417">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1246#1270#0" expanded="false" />
-            <element signature="e#1304#1329#0" expanded="false" />
-            <element signature="e#1374#1411#0" expanded="false" />
-            <element signature="e#1634#1867#0" expanded="false" />
-            <element signature="e#1901#1926#0" expanded="false" />
-            <element signature="e#1977#2895#0" expanded="false" />
-            <element signature="e#2018#2162#0" expanded="false" />
-            <element signature="e#2552#2611#0" expanded="false" />
-            <element signature="e#2657#2673#0" expanded="false" />
-            <element signature="e#2705#2895#0" expanded="false" />
+            <element signature="e#1775#1800#0" expanded="false" />
+            <element signature="e#1892#2036#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -751,16 +794,8 @@
         <state line="62" column="22" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1360">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1246#1270#0" expanded="false" />
-            <element signature="e#1304#1329#0" expanded="false" />
-            <element signature="e#1374#1411#0" expanded="false" />
-            <element signature="e#1634#1867#0" expanded="false" />
-            <element signature="e#1901#1926#0" expanded="false" />
-            <element signature="e#1977#2895#0" expanded="false" />
-            <element signature="e#2018#2162#0" expanded="false" />
-            <element signature="e#2552#2611#0" expanded="false" />
-            <element signature="e#2657#2673#0" expanded="false" />
-            <element signature="e#2705#2895#0" expanded="false" />
+            <element signature="e#1775#1800#0" expanded="false" />
+            <element signature="e#1892#2036#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -820,26 +855,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="3111">
+        <state line="158" column="25" selection-start="6169" selection-end="6169" vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="3043">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="31" selection-start="161" selection-end="161" vertical-scroll-proportion="0.25" vertical-offset="0" max-vertical-offset="3468">
+        <state line="144" column="31" selection-start="4809" selection-end="4809" vertical-scroll-proportion="0.3611111" vertical-offset="2142" max-vertical-offset="4046">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1246#1270#0" expanded="false" />
-            <element signature="e#1304#1329#0" expanded="false" />
-            <element signature="e#1374#1411#0" expanded="false" />
-            <element signature="e#1634#1867#0" expanded="false" />
-            <element signature="e#1901#1926#0" expanded="false" />
-            <element signature="e#1977#2895#0" expanded="false" />
-            <element signature="e#2018#2162#0" expanded="false" />
-            <element signature="e#2552#2611#0" expanded="false" />
-            <element signature="e#2657#2673#0" expanded="false" />
-            <element signature="e#2705#2895#0" expanded="false" />
+            <element signature="e#1775#1800#0" expanded="false" />
+            <element signature="e#1892#2036#0" expanded="false" />
           </folding>
         </state>
       </provider>

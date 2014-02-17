@@ -7,11 +7,9 @@ class Pheromone():
 
     pheromone_cap = 10
     pheromone_increment_mult = 0.1
-    pheromone_decay_rate = -0.8
-    #a mask: 1 to use col 0 to mask (1, 0 ,0) gives only red
+    pheromone_decay_rate = -0.1
 
-    def __init__(self, color_mask):
-        self.color_mask = color_mask
+    def __init__(self):
         self.pheromone = 0.0
 
     def put_pheromone(self):
@@ -24,15 +22,14 @@ class Pheromone():
     def change_pheromone(self, increment):
         self.pheromone += increment
         self.pheromone = min(self.pheromone_cap, max(0, self.pheromone))
-        #if check to prevent wall colour from decaying
 
 
 class Cell(GenericGridTools.GenericCell):
 
     def __init__(self, x, y):
         GenericGridTools.GenericCell.__init__(self, x, y)
-        self.pheromones = {"alfa" : Pheromone((0, 0, 0)),
-                          "beta" : Pheromone((0, 0, 1))}
+        self.pheromones = {"alfa" : Pheromone(),
+                           "beta" : Pheromone()}
         self.contains_ant = False
         self.contains_food = False
         self.is_nest = False
@@ -47,9 +44,10 @@ class Cell(GenericGridTools.GenericCell):
     def put_pheromone(self, type):
         self.pheromones[type].put_pheromone()
 
-    def pheromone_decay(self, type):
+    def pheromone_decay(self):
         delta_time = time.clock() - self.time_prev
-        self.pheromones[type].pheromone_decay(delta_time)
+        self.pheromones["alfa"].pheromone_decay(delta_time)
+        self.pheromones["beta"].pheromone_decay(delta_time)
         self.time_prev = time.clock()
 
     def update_color(self):
@@ -78,8 +76,7 @@ class Graph(GenericGridTools.GenericGraph):
                 self.grid[x][y] = new_cell
 
     def decay_cell(self, n):
-        n.pheromone_decay("alfa")
-        n.pheromone_decay("beta")
+        n.pheromone_decay()
 
     def update_cell_color(self, n):
         n.update_color()
@@ -96,7 +93,6 @@ class Ant:
         self.current_node = start_node
         self.current_node.ant_enter()
         self.prev_node = None
-        self.path = []
         self.found_food = False
         self.is_done = False
         self.put_type = "alfa"
@@ -111,25 +107,30 @@ class Ant:
         self.start_max_step = 100
         self.max_steps = self.start_max_step
         self.trips = 0
+        self.short_mem = []
 
     def __repr__(self):
         if self.current_node is not None:
             return str(self.current_node.x) + " " + str(self.current_node.y)
 
+    def add_mem(self, cell):
+        if len(self.short_mem) > 8:
+            self.short_mem.pop(0)
+        self.short_mem.append(cell)
+
     def weighted_choice(self, neighbours, p_type):
         possible_moves = []
-        [possible_moves.append(x) for x in neighbours if not x.closed]
+        [possible_moves.append(x) for x in neighbours if not x.closed and not x in self.short_mem]
+        if len(possible_moves) == 0:
+            [possible_moves.append(x) for x in neighbours if not x.closed]
         if random.random() > self.exploration:
             return random.choice(possible_moves)
         else:
             possible_moves.sort(key=lambda p: p.pheromones[p_type].pheromone, reverse=True)
-            #Best_choices exists so that we dont make biased picks on 8 nodes with 0 pheromone level.
-            best_choices = []
             for n in possible_moves:
-                if n.pheromones[p_type].pheromone > 0:
-                    best_choices.append(n)
-            for n in best_choices:
-                if random.random() < self.best_bias:
+                if n.pheromones[p_type].pheromone == 0:
+                    break
+                elif random.random() < self.best_bias:
                     return n
             return random.choice(possible_moves)
 
@@ -139,7 +140,9 @@ class Ant:
             self.put_type = "beta"
             self.follow_type = "alfa"
             self.origin = self.current_node
-            self.max_steps = self.start_max_step + int(((self.max_steps - self.start_max_step) * 0.3))
+            #self.max_steps = self.start_max_step + int(((self.max_steps - self.start_max_step) * 0.3))
+            self.max_steps = 100
+            self.short_mem = []
 
         elif self.current_node.is_nest and self.found_food:
             self.found_food = False
@@ -147,6 +150,9 @@ class Ant:
             self.follow_type = "beta"
             self.origin = self.current_node
             self.max_steps = self.start_max_step + int(((self.max_steps - self.start_max_step) * 0.3))
+            self.short_mem = []
+            self.trips += 1
+            print("That was trip number " +str(self.trips))
 
     def determine_move(self):
         self.steps +=1
@@ -167,8 +173,6 @@ class Ant:
                 return
 
         self.prev_node = self.current_node
-        self.path.append(self.prev_node)
-
         self.current_node.put_pheromone(self.put_type)
         self.current_node = chosen_move
 
@@ -176,6 +180,7 @@ class Ant:
         self.check_goal_completed()
 
         self.prev_node.ant_exit()
+        self.add_mem(self.prev_node)
         self.current_node.ant_enter()
 
     def update(self):
