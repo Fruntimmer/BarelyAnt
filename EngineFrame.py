@@ -15,6 +15,7 @@ class GraphEngine:
         #self.graph = graph
         self.tile_size = int(width/tile_amount)
         self.border = max(1, int(self.tile_size/15))
+        #self.border = 0
         self.screen = pygame.display.set_mode((self.width, self.height))
 
     def display_all_cells(self, graph):
@@ -156,7 +157,7 @@ class GlobalController:
             if self.active_mode is not None:
                 self.execute_active_mode()
 
-            if ticker > 9:
+            if ticker > 2:
                 self.engine.update(self.graph)
                 ticker = 0
             if run_ant:

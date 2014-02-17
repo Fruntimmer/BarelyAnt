@@ -99,7 +99,7 @@ class Ant:
         self.follow_type = "beta"
         self.origin = start_node
         #Ant randomness
-        self.exploration = random.uniform(0.2, 0.4)
+        self.exploration = random.uniform(0.1, 0.2)
         self.best_bias = random.uniform(0.7, 0.9)
 
         #This is just for testing
@@ -120,10 +120,16 @@ class Ant:
 
     def weighted_choice(self, neighbours, p_type):
         possible_moves = []
-        [possible_moves.append(x) for x in neighbours if not x.closed and not x in self.short_mem]
+        for n in neighbours:
+            if n.is_nest and self.found_food:
+                return n
+            elif n.contains_food and not self.found_food:
+                return n
+            elif n not in self.short_mem and not n.closed:
+                possible_moves.append(n)
         if len(possible_moves) == 0:
             [possible_moves.append(x) for x in neighbours if not x.closed]
-        if random.random() > self.exploration:
+        if random.random() < self.exploration:
             return random.choice(possible_moves)
         else:
             possible_moves.sort(key=lambda p: p.pheromones[p_type].pheromone, reverse=True)

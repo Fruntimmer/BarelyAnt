@@ -30,7 +30,7 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="25" selection-start="6169" selection-end="6169" vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="3043">
+            <state line="16" column="8" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
               <folding />
             </state>
           </provider>
@@ -39,7 +39,7 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="31" selection-start="4809" selection-end="4809" vertical-scroll-proportion="0.3611111" vertical-offset="2142" max-vertical-offset="4046">
+            <state line="72" column="47" selection-start="2250" selection-end="2250" vertical-scroll-proportion="0.4641638" vertical-offset="867" max-vertical-offset="4148">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#1775#1800#0" expanded="false" />
@@ -493,13 +493,18 @@
       <created>1392579569750</created>
       <updated>1392579569750</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Tried giving ants short term memory. Algorithm is much slower but ants are much more effective.">
+      <created>1392651047886</created>
+      <updated>1392651047886</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -514,7 +519,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -540,7 +544,8 @@
     <MESSAGE value="Implemented a badly working exploration factor in ants" />
     <MESSAGE value="Implemented a random exploration to the weighted choice of the Ant" />
     <MESSAGE value="This is working kind of well. Need to improve weighted choice and then tweak values." />
-    <option name="LAST_COMMIT_MESSAGE" value="This is working kind of well. Need to improve weighted choice and then tweak values." />
+    <MESSAGE value="Tried giving ants short term memory. Algorithm is much slower but ants are much more effective." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried giving ants short term memory. Algorithm is much slower but ants are much more effective." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -855,14 +860,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="25" selection-start="6169" selection-end="6169" vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="3043">
+        <state line="16" column="8" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="31" selection-start="4809" selection-end="4809" vertical-scroll-proportion="0.3611111" vertical-offset="2142" max-vertical-offset="4046">
+        <state line="72" column="47" selection-start="2250" selection-end="2250" vertical-scroll-proportion="0.4641638" vertical-offset="867" max-vertical-offset="4148">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#1775#1800#0" expanded="false" />
