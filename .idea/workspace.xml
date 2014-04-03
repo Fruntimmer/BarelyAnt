@@ -30,7 +30,7 @@
       <file leaf-file-name="EngineFrame.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EngineFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="8" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
+            <state line="31" column="32" selection-start="974" selection-end="974" vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="3128">
               <folding />
             </state>
           </provider>
@@ -39,12 +39,8 @@
       <file leaf-file-name="Ant.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="47" selection-start="2250" selection-end="2250" vertical-scroll-proportion="0.4641638" vertical-offset="867" max-vertical-offset="4148">
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#1775#1800#0" expanded="false" />
-                <element signature="e#1892#2036#0" expanded="false" />
-              </folding>
+            <state line="8" column="34" selection-start="129" selection-end="129" vertical-scroll-proportion="0.16803955" vertical-offset="0" max-vertical-offset="4386">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,7 +101,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -497,31 +494,35 @@
       <created>1392651047886</created>
       <updated>1392651047886</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Now it's working ok. Typo with exploration causing them to have 90% chance to explore instead of 10%.">
+      <created>1392654359377</created>
+      <updated>1392654359377</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.178125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.134375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771337" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3329821" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -545,7 +546,8 @@
     <MESSAGE value="Implemented a random exploration to the weighted choice of the Ant" />
     <MESSAGE value="This is working kind of well. Need to improve weighted choice and then tweak values." />
     <MESSAGE value="Tried giving ants short term memory. Algorithm is much slower but ants are much more effective." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tried giving ants short term memory. Algorithm is much slower but ants are much more effective." />
+    <MESSAGE value="Now it's working ok. Typo with exploration causing them to have 90% chance to explore instead of 10%." />
+    <option name="LAST_COMMIT_MESSAGE" value="Now it's working ok. Typo with exploration causing them to have 90% chance to explore instead of 10%." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -553,6 +555,62 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="13" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EngineFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3094">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="4182">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GenericGridTools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="13" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="118" selection-start="1128" selection-end="1128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3077">
@@ -563,11 +621,7 @@
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="131" column="0" selection-start="4268" selection-end="4268" vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="3009">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1775#1800#0" expanded="false" />
-            <element signature="e#1892#2036#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -602,11 +656,7 @@
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="66" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="3485">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1775#1800#0" expanded="false" />
-            <element signature="e#1892#2036#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -641,11 +691,7 @@
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="130" column="65" selection-start="4280" selection-end="4280" vertical-scroll-proportion="0.0" vertical-offset="2176" max-vertical-offset="3281">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1775#1800#0" expanded="false" />
-            <element signature="e#1892#2036#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -680,11 +726,7 @@
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="143" column="117" selection-start="5128" selection-end="5128" vertical-scroll-proportion="0.0" vertical-offset="2431" max-vertical-offset="3196">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1775#1800#0" expanded="false" />
-            <element signature="e#1892#2036#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,11 +761,7 @@
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="35" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1377">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1775#1800#0" expanded="false" />
-            <element signature="e#1892#2036#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -758,11 +796,7 @@
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="41" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3417">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1775#1800#0" expanded="false" />
-            <element signature="e#1892#2036#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -797,11 +831,7 @@
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="22" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1360">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1775#1800#0" expanded="false" />
-            <element signature="e#1892#2036#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -860,19 +890,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EngineFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="8" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3060">
+        <state line="31" column="32" selection-start="974" selection-end="974" vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="3128">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="47" selection-start="2250" selection-end="2250" vertical-scroll-proportion="0.4641638" vertical-offset="867" max-vertical-offset="4148">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1775#1800#0" expanded="false" />
-            <element signature="e#1892#2036#0" expanded="false" />
-          </folding>
+        <state line="8" column="34" selection-start="129" selection-end="129" vertical-scroll-proportion="0.16803955" vertical-offset="0" max-vertical-offset="4386">
+          <folding />
         </state>
       </provider>
     </entry>

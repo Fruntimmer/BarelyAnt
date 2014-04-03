@@ -15,7 +15,7 @@ class GraphEngine:
         #self.graph = graph
         self.tile_size = int(width/tile_amount)
         self.border = max(1, int(self.tile_size/15))
-        #self.border = 0
+        # self.border = 0
         self.screen = pygame.display.set_mode((self.width, self.height))
 
     def display_all_cells(self, graph):
@@ -152,12 +152,16 @@ class GlobalController:
         ticker = 0
         while running:
             #Checks for m+kb input
+            prev_time = time.clock()
             run_ant, running = self.input_listen(run_ant, running)
             #performs actions depending on what active_mode is set to
             if self.active_mode is not None:
                 self.execute_active_mode()
 
-            if ticker > 2:
+            if ticker > 0:
+                new_time = time.clock()
+                #print(new_time-prev_time)
+                prev_time = new_time
                 self.engine.update(self.graph)
                 ticker = 0
             if run_ant:
@@ -167,7 +171,7 @@ class GlobalController:
             ticker += 1
 
 tile_amount = 50
-window_size = 1000
+window_size = 800
 max_ants = 100
 ants_per_tick = 8
 

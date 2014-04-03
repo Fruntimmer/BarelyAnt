@@ -6,8 +6,8 @@ import random
 class Pheromone():
 
     pheromone_cap = 10
-    pheromone_increment_mult = 0.1
-    pheromone_decay_rate = -0.1
+    pheromone_increment_mult = 0.2
+    pheromone_decay_rate = -.3
 
     def __init__(self):
         self.pheromone = 0.0
@@ -18,6 +18,7 @@ class Pheromone():
 
     def pheromone_decay(self, delta_time):
         self.change_pheromone((self.pheromone * self.pheromone_decay_rate) * delta_time)
+        #self.change_pheromone(self.pheromone_decay_rate * delta_time)
 
     def change_pheromone(self, increment):
         self.pheromone += increment
@@ -66,6 +67,7 @@ class Graph(GenericGridTools.GenericGraph):
         self.nest_node = None
         self.food_node = None
         self.create_grid()
+        self.decay_ticker = 0
 
     def create_grid(self):
         self.grid = [[0 for x in range(self.tile_amount)] for y in range(self.tile_amount)]
@@ -81,6 +83,13 @@ class Graph(GenericGridTools.GenericGraph):
     def update_cell_color(self, n):
         n.update_color()
 
+    # def update(self):
+    #     if self.decay_ticker > 9:
+    #         for x in range(0, self.tile_amount):
+    #             for y in range(0, self.tile_amount):
+    #                 self.decay_cell(self.grid[x][y])
+    #                 self.update_cell_color(self.grid[x][y])
+    #     self.decay_ticker += 1
     def update(self):
         for x in range(0, self.tile_amount):
             for y in range(0, self.tile_amount):
@@ -99,11 +108,11 @@ class Ant:
         self.follow_type = "beta"
         self.origin = start_node
         #Ant randomness
-        self.exploration = random.uniform(0.1, 0.2)
-        self.best_bias = random.uniform(0.7, 0.9)
+        self.exploration = random.uniform(0.0, 0.3)
+        self.best_bias = random.uniform(0.75-self.exploration, 0.95)
 
         #This is just for testing
-        self.steps = 0
+        self.steps_taken = 0
         self.start_max_step = 100
         self.max_steps = self.start_max_step
         self.trips = 0
@@ -129,16 +138,16 @@ class Ant:
                 possible_moves.append(n)
         if len(possible_moves) == 0:
             [possible_moves.append(x) for x in neighbours if not x.closed]
-        if random.random() < self.exploration:
-            return random.choice(possible_moves)
-        else:
-            possible_moves.sort(key=lambda p: p.pheromones[p_type].pheromone, reverse=True)
-            for n in possible_moves:
-                if n.pheromones[p_type].pheromone == 0:
-                    break
-                elif random.random() < self.best_bias:
-                    return n
-            return random.choice(possible_moves)
+        # if random.random() < self.exploration:
+        #     return random.choice(possible_moves)
+        # else:
+        possible_moves.sort(key=lambda p: p.pheromones[p_type].pheromone, reverse=True)
+        for n in possible_moves:
+            if n.pheromones[p_type].pheromone == 0:
+                break
+            elif random.random() < self.best_bias:
+                return n
+        return random.choice(possible_moves)
 
     def check_goal_completed(self):
         if self.current_node.contains_food and not self.found_food:
@@ -147,7 +156,8 @@ class Ant:
             self.follow_type = "alfa"
             self.origin = self.current_node
             #self.max_steps = self.start_max_step + int(((self.max_steps - self.start_max_step) * 0.3))
-            self.max_steps = 100
+            #self.max_steps = 100
+            self.steps_taken = 0
             self.short_mem = []
 
         elif self.current_node.is_nest and self.found_food:
@@ -155,21 +165,22 @@ class Ant:
             self.put_type = "alfa"
             self.follow_type = "beta"
             self.origin = self.current_node
+            self.steps_taken = 0
             self.max_steps = self.start_max_step + int(((self.max_steps - self.start_max_step) * 0.3))
             self.short_mem = []
             self.trips += 1
             print("That was trip number " +str(self.trips))
 
     def determine_move(self):
-        self.steps +=1
+        self.steps_taken += 1
         chosen_move = None
         if self.current_node.closed or len(self.current_node.neighbours.values()) < 1:
             self.is_done = True
             print("I die. This should only happen if you are drawing walls")
-        elif self.steps > self.max_steps:
+        elif self.steps_taken > self.max_steps:
             #Ant has failed and its max range is increased
-            self.steps = 0
-            self.max_steps *= 1.1
+            self.steps_taken = 0
+            self.max_steps *= 1.3
             chosen_move = self.origin
         else:
             chosen_move = self.weighted_choice(self.current_node.neighbours.values(), self.follow_type)
